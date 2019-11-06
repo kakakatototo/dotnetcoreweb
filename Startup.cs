@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace webtest
+namespace ykatou
 {
     public class Startup
     {
@@ -27,12 +27,17 @@ namespace webtest
             }
 
             app.UseRouting();
+            //app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
                 {
                     await context.Response.WriteAsync("Hello World!");
+                });
+                endpoints.MapGet("/a", async context =>
+                {
+                    await context.Response.WriteAsync("Aaaaa Aaaaab!");
                 });
             });
         }
